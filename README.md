@@ -21,3 +21,7 @@
    2. copy frontend/.gitignore to parent folder
    3. create github account
    4. click on source control and publish to github
+5. List Products
+   1. add data.js
+   2. add images
+   3. render products
