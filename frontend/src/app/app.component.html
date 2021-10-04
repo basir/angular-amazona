@@ -1,6 +1,6 @@
 <div>
   <mat-toolbar color="primary">
-    <a mat-button href="/">Amazona</a>
+    <a mat-button routerLink="/">Amazona</a>
     <div class="toolbar-spacer"></div>
     <div>
       <a mat-button href="/cart">Cart</a>
@@ -8,24 +8,6 @@
     </div>
   </mat-toolbar>
   <div class="container">
-    <h2>Latest Products</h2>
-    <div fxLayout="row wrap" fxLayoutGap="20px grid">
-      <div fxFlex="25%" *ngFor="let product of products">
-        <mat-card>
-          <a [href]="'/product/' + product.slug">
-            <img mat-card-image [src]="product.image" [alt]="product.name" />
-            <mat-card-content>
-              <p>
-                {{ product.name }}
-              </p>
-            </mat-card-content>
-          </a>
-          <mat-card-actions>
-            <span>${{ product.price }}</span>
-            <button mat-button>ADD TO CART</button>
-          </mat-card-actions>
-        </mat-card>
-      </div>
-    </div>
+    <router-outlet></router-outlet>
   </div>
 </div>

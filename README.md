@@ -25,3 +25,8 @@
    1. add data.js
    2. add images
    3. list products
+6. Create Route For Home Page
+   1. create home page component
+   2. add routing
+   3. copy app to home page
+   4. create products.js file
