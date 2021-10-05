@@ -1,1 +1,51 @@
-<p>product-details works!</p>
+<div *ngIf="loading; else result">
+  <p>Loading...</p>
+</div>
+<ng-template #result>
+  <div *ngIf="error">
+    {{ error }}
+  </div>
+  <div *ngIf="!error">
+    <div class="back-to-result">
+      <a routerLink="/">Back to result</a>
+    </div>
+    <div fxLayout="row wrap" fxLayoutGap="20px grid">
+      <div fxFlex="50%" fxFlex.xs="100%">
+        <img class="full-width" [src]="product.image" [alt]="product.name" />
+      </div>
+      <div fxFlex="25%" fxFlex.xs="100%">
+        <h1>{{ product.name }}</h1>
+        <mat-list>
+          <mat-list-item> category: {{ product.category }}</mat-list-item>
+          <mat-list-item> brand: {{ product.brand }}</mat-list-item>
+          <mat-list-item> description: {{ product.description }}</mat-list-item>
+        </mat-list>
+      </div>
+      <div fxFlex="25%" fxFlex.xs="100%">
+        <mat-card>
+          <mat-list>
+            <mat-list-item>
+              <div class="full-width" fxLayout="row">
+                <div fxFlex="50%">Price:</div>
+                <div fxFlex="50%">${{ product.price }}</div>
+              </div>
+            </mat-list-item>
+            <mat-list-item>
+              <div class="full-width" fxLayout="row">
+                <div fxFlex="50%">Status:</div>
+                <div fxFlex="50%">
+                  {{ product.countInStock > 0 ? "In Stock" : "Unavailable" }}
+                </div>
+              </div>
+            </mat-list-item>
+          </mat-list>
+          <mat-card-actions>
+            <button class="full-width" mat-raised-button color="primary">
+              ADD TO CART
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</ng-template>

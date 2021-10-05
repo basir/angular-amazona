@@ -29,4 +29,8 @@
    1. create home page component
    2. add routing
    3. copy app to home page
-   4. create products.js file
+7. Create Product Page
+   1. move products to products.js file
+   2. load product from products.js
+   3. add image, info and action column
+   
